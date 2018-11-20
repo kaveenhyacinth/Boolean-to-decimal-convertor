@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1542694159 source:d:\programming\[c]\bootcamp\decimal to boolian\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

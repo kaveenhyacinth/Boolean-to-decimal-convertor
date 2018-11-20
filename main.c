@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+long converterD2B(int n);
+int converterB2D(long n);
+int decimalToBinery();
+int bineryToDecimal();
+
+int main()
+{
+    int option, k = 1;
+
+    while (k > 0)
+    {
+        printf("\n*********Menu*********\n\n(1)Decimal into Binery\n(2)Binery into Decimal\n");
+        printf("\n\nEnter your Option: ");
+        scanf("%d", &option);
+
+        if (option == 1)
+        {
+            decimalToBinery();
+        }
+        if (option == 2)
+        {
+            bineryToDecimal();
+        }
+        if (option<1 || option >2)
+        {
+            printf("\nooops! Something went wrong! Choose the correct option again.\n");
+        }
+
+        k++;
+    }
+
+}
+
+int decimalToBinery()
+{
+    long x;
+
+    printf("\n\nEnter a decimal number: ");
+    scanf("%d", &x);
+
+    printf("\n\n%d  >>>>  %ld \n\n", x, converterD2B(x));
+
+    return 0;
+}
+
+int bineryToDecimal()
+{
+    long y;
+    printf("\nEnter a binary number: ");
+    scanf("%lld", &y);
+    printf("\n\n%d  >>>>  %ld \n\n", y, converterB2D(y));
+    return 0;
+}
+
+long converterD2B(int n)
+{
+    long binery = 0;
+    int y, i = 1;
+
+    while (n != 0)
+    {
+        y = n%2;
+        n /= 2;
+
+        binery += y*i;
+        i *= 10;
+
+    }
+    return binery;
+}
+
+int converterB2D(long n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
