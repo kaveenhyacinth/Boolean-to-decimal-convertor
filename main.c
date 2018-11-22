@@ -13,10 +13,16 @@ int main()
 
     while (k > 0)
     {
-        printf("\n*********Menu*********\n\n(1)Decimal into Binery\n(2)Binery into Decimal\n");
+        rintf("\n*********Menu*********\n\n(1)Decimal into Binary\n(2)Binary into Decimal\n\n - Enter 0 to exit -");
         printf("\n\nEnter your Option: ");
         scanf("%d", &option);
 
+        //when option = 0. Program will terminate
+        if(option == 0)
+        {
+            exit(0);
+            break;
+        }
         if (option == 1)
         {
             decimalToBinery();
